@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Download, Github, Linkedin, Mail, MapPin, GraduationCap, Building2, Calendar, Code, FolderOpen, Sparkles } from "lucide-react";
+import { ArrowLeft, Github, Linkedin, Mail, MapPin, GraduationCap, Building2, Calendar, Code, FolderOpen, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/AnimatedText";
 import { TiltCard } from "@/components/TiltCard";
@@ -84,7 +84,7 @@ export default function HomePage() {
             {/* Greeting */}
             <FadeInUp delay={0.1}>
               <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="text-primary font-mono text-sm sm:text-base">//</span>
+                <span className="text-primary font-mono text-sm sm:text-base">{"//"}</span>
                 <span className="text-text-secondary">مرحباً، أنا</span>
               </div>
             </FadeInUp>

@@ -73,12 +73,12 @@ const methodologies = [
 export default function SkillsPage() {
   const [activeTab, setActiveTab] = useState("skills");
 
-  const skillKeys = ['languages', 'frontend', 'backend', 'database', 'ai', 'cloud', 'mobile', 'design', 'tools'];
+  const skillKeys = ['languages', 'frontend', 'backend', 'database', 'ai', 'cloud', 'mobile', 'design', 'tools'] as const;
   const skillCategories = skillKeys
     .filter(key => key in skillsData)
     .map((key) => ({
       key,
-      data: (skillsData as Record<string, { title: string; icon: string; skills: unknown[] }>)[key]
+      data: (skillsData as unknown as Record<string, { title: string; icon: string; skills: unknown[] }>)[key]
     }));
 
   return (
@@ -132,7 +132,7 @@ export default function SkillsPage() {
               transition={{ duration: 0.3 }}
             >
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {skillCategories.map(({ key, data }, index) => {
+                {skillCategories.map(({ key, data }) => {
                   const IconComponent = categoryIcons[data.icon] || Code;
                   const colorClass = categoryColors[key] || "from-gray-500 to-slate-500";
                   
@@ -215,9 +215,9 @@ export default function SkillsPage() {
               transition={{ duration: 0.3 }}
             >
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                {certificates.map((cert, index) => (
-                  <StaggerItem key={index}>
-                    <TiltCard glowColor={["cyan", "purple", "green"][index % 3]}>
+                {certificates.map((cert, certIdx) => (
+                  <StaggerItem key={certIdx}>
+                    <TiltCard glowColor={["cyan", "purple", "green"][certIdx % 3]}>
                       <div className="p-6 text-center">
                         <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                           <Award className="w-8 h-8 text-primary" />
@@ -246,9 +246,9 @@ export default function SkillsPage() {
               className="max-w-2xl mx-auto"
             >
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                {languagesSpoken.map((lang, index) => (
-                  <StaggerItem key={index}>
-                    <TiltCard glowColor={index === 0 ? "green" : "cyan"}>
+                {languagesSpoken.map((lang, langIdx) => (
+                  <StaggerItem key={langIdx}>
+                    <TiltCard glowColor={langIdx === 0 ? "green" : "cyan"}>
                       <div className="p-6">
                         <div className="flex items-center gap-4 mb-4">
                           <span className="text-4xl">{lang.flag}</span>
@@ -261,9 +261,9 @@ export default function SkillsPage() {
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${lang.percentage}%` }}
-                            transition={{ duration: 1, delay: index * 0.2 }}
+                            transition={{ duration: 1, delay: langIdx * 0.2 }}
                             className={`h-full rounded-full ${
-                              index === 0 
+                              langIdx === 0 
                                 ? "bg-gradient-to-r from-green-500 to-emerald-500" 
                                 : "bg-gradient-to-r from-cyan-500 to-blue-500"
                             }`}
@@ -288,7 +288,7 @@ export default function SkillsPage() {
               transition={{ duration: 0.3 }}
             >
               <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
-                {methodologies.map((method, index) => {
+                {methodologies.map((method, methodIdx) => {
                   const colors = [
                     "from-cyan-500 to-blue-500",
                     "from-purple-500 to-pink-500",
@@ -297,12 +297,12 @@ export default function SkillsPage() {
                   ];
                   
                   return (
-                    <StaggerItem key={index}>
+                    <StaggerItem key={methodIdx}>
                       <motion.div
                         whileHover={{ y: -5 }}
                         className="glass-card rounded-2xl p-6 flex items-start gap-4"
                       >
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center flex-shrink-0`}>
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors[methodIdx]} flex items-center justify-center flex-shrink-0`}>
                           <CheckCircle className="w-6 h-6 text-white" />
                         </div>
                         <div>

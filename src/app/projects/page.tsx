@@ -35,7 +35,7 @@ export default function ProjectsPage() {
       {/* Projects Grid */}
       <section className="max-w-6xl mx-auto">
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projectsData.map((project, index) => (
+          {projectsData.map((project) => (
             <StaggerItem key={project.id}>
               <motion.div
                 whileHover={{ y: -8 }}
@@ -176,12 +176,12 @@ export default function ProjectsPage() {
                       المميزات الرئيسية
                     </h3>
                     <ul className="space-y-3">
-                      {selectedProject.features.map((feature, index) => (
+                      {selectedProject.features.map((feature, idx) => (
                         <motion.li
-                          key={index}
+                          key={idx}
                           initial={{ x: -20, opacity: 0 }}
                           animate={{ x: 0, opacity: 1 }}
-                          transition={{ delay: index * 0.1 }}
+                          transition={{ delay: idx * 0.1 }}
                           className="flex items-start gap-3"
                         >
                           <span className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -200,12 +200,12 @@ export default function ProjectsPage() {
                       التقنيات المستخدمة
                     </h3>
                     <div className="flex flex-wrap gap-2 sm:gap-3">
-                      {selectedProject.tech.map((tech, index) => (
+                      {selectedProject.tech.map((tech, techIdx) => (
                         <motion.span
-                          key={index}
+                          key={techIdx}
                           initial={{ scale: 0.8, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
-                          transition={{ delay: index * 0.05 }}
+                          transition={{ delay: techIdx * 0.05 }}
                           className="px-3 sm:px-4 py-1.5 sm:py-2 bg-bg-darker border border-border rounded-xl text-sm text-text-primary hover:border-primary transition-colors"
                         >
                           {tech}

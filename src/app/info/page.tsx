@@ -9,7 +9,6 @@ import {
   Github, 
   Linkedin,
   Calendar,
-  Phone,
   Globe,
   ExternalLink
 } from "lucide-react";

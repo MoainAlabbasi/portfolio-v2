@@ -15,9 +15,7 @@ import {
   GraduationCap,
   Calendar,
   Building2,
-  Target,
-  MapPin,
-  Award
+  Target
 } from "lucide-react";
 import { siteConfig, aboutData } from "@/lib/config";
 import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/AnimatedText";
