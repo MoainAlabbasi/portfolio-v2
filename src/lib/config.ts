@@ -2,13 +2,19 @@
 export const siteConfig = {
   name: "Moain Alabbasi",
   nameAr: "معين العباسي",
-  title: "AI Solutions Developer & Prompt Engineer",
-  titleAr: "مطور حلول الذكاء الاصطناعي ومهندس البرومبتات",
-  description: "مطور Full-Stack شغوف بالتقنية، متخصص في دمج حلول الذكاء الاصطناعي وهندسة البرومبتات. أحول المشكلات المعقدة إلى حلول برمجية أنيقة.",
+  title: "Full-Stack Developer & AI Prompt Engineer",
+  titleAr: "مطور Full-Stack ومهندس البرومبتات",
+  description: "مطور Full-Stack شغوف بالتقنية، متخصص في بناء تطبيقات الويب والموبايل، دمج حلول الذكاء الاصطناعي، وهندسة البرومبتات. أحول المشكلات المعقدة إلى حلول برمجية أنيقة.",
   email: "Moain.learn@gmail.com",
   location: "اليمن",
   github: "https://github.com/MoainAlabbasi",
   linkedin: "https://linkedin.com/in/moainalabbasi",
+  
+  // Social Links
+  social: {
+    github: "https://github.com/MoainAlabbasi",
+    linkedin: "https://linkedin.com/in/moainalabbasi",
+  },
   
   // Education
   education: {
@@ -19,14 +25,14 @@ export const siteConfig = {
   
   // Experience
   experience: {
-    years: "5+",
+    years: "3+",
     company: "شركة العباسي لتوليد الطاقة الكهربائية",
-    period: "2019 - الآن",
+    period: "2022 - الآن",
   },
   
   // Stats
   stats: {
-    yearsExperience: "5+",
+    yearsExperience: "3+",
     projects: "31",
     languages: "10+",
     mainProjects: "6+",
@@ -39,15 +45,104 @@ export const navLinks = [
   { href: "/about", label: "نبذة عني", icon: "User" },
   { href: "/skills", label: "المهارات", icon: "Code" },
   { href: "/projects", label: "المشاريع", icon: "FolderOpen" },
-  { href: "/contact", label: "تواصل معي", icon: "Mail" },
+  { href: "/info", label: "معلومات التواصل", icon: "Info" },
 ];
+
+// About Page - Detailed
+export const aboutData = {
+  intro: "أنا معين العباسي، طالب في السنة الأخيرة بجامعة العلوم والتكنولوجيا في اليمن. شغفي الحقيقي يكمن في عالم التقنية والبرمجة، حيث أجد متعة كبيرة في تحويل الأفكار إلى واقع ملموس.",
+  
+  whoAmI: {
+    title: "من أنا؟",
+    content: "أنا مطور Full-Stack متعدد المهارات، أجمع بين تطوير الواجهات الأمامية والخلفية، تطبيقات الموبايل، وحلول الذكاء الاصطناعي. أؤمن بأن التكنولوجيا يجب أن تخدم الإنسان وتسهل حياته، لذلك أسعى دائماً لبناء حلول عملية تحل مشاكل حقيقية.",
+    highlights: [
+      "طالب سنة رابعة - تقنية المعلومات",
+      "خبرة 3+ سنوات في التطوير",
+      "متخصص في AI و Prompt Engineering",
+      "شغوف بحل المشكلات المعقدة",
+    ],
+  },
+  
+  specialties: [
+    {
+      title: "التفكير التحليلي",
+      description: "القدرة على تحليل المشكلات المعقدة وتفكيكها إلى أجزاء قابلة للحل بطريقة منهجية ومنظمة.",
+      icon: "🧠",
+    },
+    {
+      title: "الإبداع في الحلول",
+      description: "أفضل الابتكار في إيجاد حلول جديدة ومبتكرة بدلاً من الاعتماد على الحلول التقليدية.",
+      icon: "💡",
+    },
+    {
+      title: "التعلم السريع",
+      description: "القدرة على استيعاب التقنيات والمفاهيم الجديدة بسرعة وتطبيقها في المشاريع العملية.",
+      icon: "🚀",
+    },
+    {
+      title: "العمل تحت الضغط",
+      description: "المحافظة على الأداء العالي والجودة حتى في ظل المواعيد النهائية الضيقة.",
+      icon: "⚡",
+    },
+  ],
+  
+  journey: [
+    {
+      year: "2019",
+      title: "بداية المسيرة المهنية",
+      description: "بدأت العمل في شركة العباسي لتوليد الطاقة الكهربائية، حيث تعلمت أساسيات إدارة الأعمال والأنظمة.",
+    },
+    {
+      year: "2020",
+      title: "الترقية للإدارة",
+      description: "ترقيت لمنصب إداري مع مسؤوليات أوسع تشمل إدارة الأنظمة والعمليات التقنية.",
+    },
+    {
+      year: "2022",
+      title: "بداية رحلة البرمجة",
+      description: "بدأت تعلم البرمجة بشكل جدي وتطوير حلول برمجية للشركة باستخدام تقنيات متعددة.",
+    },
+    {
+      year: "2023",
+      title: "التخصص في AI",
+      description: "تعمقت في الذكاء الاصطناعي وهندسة البرومبتات وبدأت دمجها في مشاريعي.",
+    },
+    {
+      year: "2024-2025",
+      title: "السنة الأخيرة",
+      description: "أوازن بين الدراسة الجامعية والعمل مع تطوير مشاريع متقدمة ومشروع التخرج.",
+    },
+  ],
+  
+  passions: [
+    "حل المشكلات المعقدة",
+    "تصميم واجهات المستخدم",
+    "الذكاء الاصطناعي",
+    "التعلم المستمر",
+    "بناء المنتجات",
+    "الأتمتة",
+    "التصميم الإبداعي",
+    "تطوير الألعاب",
+  ],
+};
 
 // Skills Data
 export const skillsData = {
   languages: {
     title: "لغات البرمجة",
     icon: "Code",
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "C#", "PHP", "Kotlin", "Go", "Dart", "SQL"],
+    skills: [
+      { name: "Python", level: 90, color: "#3776AB" },
+      { name: "JavaScript", level: 85, color: "#F7DF1E" },
+      { name: "TypeScript", level: 80, color: "#3178C6" },
+      { name: "Java", level: 75, color: "#ED8B00" },
+      { name: "C#", level: 80, color: "#512BD4" },
+      { name: "PHP", level: 70, color: "#777BB4" },
+      { name: "Kotlin", level: 70, color: "#7F52FF" },
+      { name: "Go", level: 65, color: "#00ADD8" },
+      { name: "Dart", level: 75, color: "#0175C2" },
+      { name: "SQL", level: 85, color: "#4479A1" },
+    ],
   },
   frontend: {
     title: "الواجهة الأمامية",
@@ -57,7 +152,7 @@ export const skillsData = {
   backend: {
     title: "الواجهة الخلفية",
     icon: "Server",
-    skills: ["Django", "Flask", "FastAPI", "ASP.NET", "Laravel", "Node.js", "REST API"],
+    skills: ["Django", "Flask", "FastAPI", "ASP.NET Core", "Laravel", "Node.js", "REST API"],
   },
   database: {
     title: "قواعد البيانات",
@@ -67,12 +162,12 @@ export const skillsData = {
   ai: {
     title: "الذكاء الاصطناعي",
     icon: "Brain",
-    skills: ["Prompt Engineering", "Gemini AI", "ChatGPT", "Claude", "TensorFlow", "Pandas", "NumPy"],
+    skills: ["Prompt Engineering", "Gemini AI", "ChatGPT/GPT-4", "Claude", "TensorFlow", "Pandas", "NumPy"],
   },
   cloud: {
     title: "السحابة و DevOps",
     icon: "Cloud",
-    skills: ["Docker", "Linux", "Azure", "GCP", "Vercel", "Netlify", "Railway"],
+    skills: ["Docker", "Linux", "Microsoft Azure", "Google Cloud", "Vercel", "Netlify", "Railway"],
   },
   mobile: {
     title: "تطوير التطبيقات",
@@ -87,8 +182,27 @@ export const skillsData = {
   tools: {
     title: "أدوات التطوير",
     icon: "Wrench",
-    skills: ["VS Code", "Visual Studio", "PyCharm", "IntelliJ IDEA", "Git", "GitHub", "Postman"],
+    skills: ["VS Code", "Visual Studio", "PyCharm", "IntelliJ IDEA", "Git", "GitHub", "Postman", "Slack"],
   },
+  
+  // Sub-sections for Skills page
+  certificates: [
+    { name: "ICDL", description: "الرخصة الدولية لقيادة الحاسوب", year: "2020" },
+    { name: "صيانة وبرمجة الهواتف", description: "شهادة معتمدة في صيانة وبرمجة الأجهزة الذكية", year: "2021" },
+    { name: "دورات الإنجليزية", description: "دورات متعددة في اللغة الإنجليزية", year: "2019-2022" },
+  ],
+  
+  languages_spoken: [
+    { name: "العربية", level: "اللغة الأم", percentage: 100, flag: "🇾🇪" },
+    { name: "الإنجليزية", level: "جيد", percentage: 70, flag: "🇬🇧" },
+  ],
+  
+  methodologies: [
+    { name: "Agile", description: "منهجية تطوير مرنة وتكرارية" },
+    { name: "Scrum", description: "إطار عمل لإدارة المشاريع" },
+    { name: "Kanban", description: "نظام إدارة المهام المرئي" },
+    { name: "Waterfall", description: "المنهجية التقليدية المتسلسلة" },
+  ],
 };
 
 // Projects Data
@@ -97,6 +211,7 @@ export const projectsData = [
     id: "sacm",
     title: "SACM-System",
     titleAr: "نظام إدارة المحتوى الأكاديمي الذكي",
+    shortDesc: "نظام ذكي لإدارة المحتوى الأكاديمي مع AI",
     description: "نظام متكامل لإدارة المحتوى الأكاديمي مع ميزات ذكاء اصطناعي متقدمة تشمل التلخيص التلقائي للمحاضرات، توليد الأسئلة الامتحانية، والمحادثة الذكية مع المحتوى. يساعد الطلاب والمحاضرين على تحسين العملية التعليمية.",
     features: [
       "تلخيص تلقائي للمحاضرات باستخدام AI",
@@ -106,13 +221,14 @@ export const projectsData = [
       "نظام مصادقة متعدد المستويات",
     ],
     tech: ["Python", "Django", "Gemini AI", "PostgreSQL", "REST API"],
-    image: "/images/projects/sacm.png",
     color: "from-cyan-500 to-blue-600",
+    icon: "🎓",
   },
   {
     id: "electronics",
     title: "Electronics Store Management",
     titleAr: "نظام إدارة محلات الإلكترونيات",
+    shortDesc: "نظام متكامل لإدارة المبيعات والمخزون",
     description: "نظام متكامل لإدارة عمليات البيع بالتجزئة يشمل تطبيق سطح مكتب للكاشير، واجهة ويب للإدارة، وواجهة برمجية للتكامل مع الأنظمة الأخرى. يدعم إدارة المخزون، الفواتير، والتقارير المالية.",
     features: [
       "تطبيق سطح مكتب للكاشير",
@@ -122,13 +238,14 @@ export const projectsData = [
       "تقارير مالية شاملة",
     ],
     tech: ["C#", ".NET", "SQL Server", "REST API", "WPF"],
-    image: "/images/projects/electronics.png",
     color: "from-emerald-500 to-green-600",
+    icon: "🏪",
   },
   {
     id: "income-expense",
     title: "Income & Expense Tracker",
     titleAr: "تطبيق الدخل والمصروفات",
+    shortDesc: "تطبيق Android لإدارة المالية الشخصية",
     description: "تطبيق Android لإدارة الشؤون المالية الشخصية بواجهة مستخدم سهلة وبديهية. يساعد المستخدمين على تتبع دخلهم ومصروفاتهم وتحليل أنماط الإنفاق.",
     features: [
       "تتبع الدخل والمصروفات",
@@ -138,13 +255,14 @@ export const projectsData = [
       "واجهة مستخدم سهلة",
     ],
     tech: ["Kotlin", "Android", "SQLite", "Material Design"],
-    image: "/images/projects/income.png",
     color: "from-amber-500 to-orange-600",
+    icon: "💰",
   },
   {
     id: "ai-extractor",
     title: "AI Question Extractor",
     titleAr: "مستخرج الأسئلة بالذكاء الاصطناعي",
+    shortDesc: "أداة ذكية لاستخراج الأسئلة من الملفات",
     description: "أداة ويب متقدمة لاستخراج الأسئلة من المستندات والملفات باستخدام Gemini AI. مصممة للأغراض التعليمية لمساعدة المعلمين والطلاب.",
     features: [
       "استخراج أسئلة من PDF و Word",
@@ -154,13 +272,14 @@ export const projectsData = [
       "معالجة سريعة بـ AI",
     ],
     tech: ["TypeScript", "Next.js", "Gemini AI", "Tailwind CSS"],
-    image: "/images/projects/extractor.png",
     color: "from-violet-500 to-purple-600",
+    icon: "🤖",
   },
   {
     id: "telegram-bot",
     title: "Telegram Archive Bot",
     titleAr: "بوت أرشفة تليجرام",
+    shortDesc: "نظام لأرشفة وتنظيم ملفات تليجرام",
     description: "نظام MVP لأرشفة ملفات تليجرام يتضمن بوت Python قوي وواجهة ويب للإدارة. يساعد على تنظيم وحفظ الملفات المشاركة في المجموعات.",
     features: [
       "أرشفة تلقائية للملفات",
@@ -170,13 +289,14 @@ export const projectsData = [
       "دعم أنواع ملفات متعددة",
     ],
     tech: ["Python", "Telegram API", "Flask", "SQLite"],
-    image: "/images/projects/telegram.png",
     color: "from-sky-500 to-blue-600",
+    icon: "📦",
   },
   {
     id: "blockchain",
     title: "Blockchain Graduation Project",
     titleAr: "مشروع Blockchain للتخرج",
+    shortDesc: "مشروع تخرج بتقنية Blockchain",
     description: "مشروع تخرج متقدم باستخدام تقنية Blockchain وإطار Hyperledger Fabric. يهدف لتطبيق تقنية السلسلة الكتلية في مجال محدد.",
     features: [
       "شبكة Blockchain خاصة",
@@ -186,18 +306,28 @@ export const projectsData = [
       "أمان عالي المستوى",
     ],
     tech: ["Go", "Hyperledger Fabric", "Docker", "Node.js"],
-    image: "/images/projects/blockchain.png",
     color: "from-pink-500 to-rose-600",
+    icon: "⛓️",
   },
 ];
 
+// Contact Info
+export const contactInfo = {
+  email: "Moain.learn@gmail.com",
+  github: "MoainAlabbasi",
+  linkedin: "moainalabbasi",
+  location: "اليمن",
+  cvEn: "/Moain_Alabbasi_CV_EN.pdf",
+  cvAr: "/Moain_Alabbasi_CV_AR.pdf",
+};
+
 // Bot Commands
 export const botCommands = [
-  { command: "/start", description: "بدء المحادثة", response: "مرحباً! أنا مساعد معين الافتراضي. كيف يمكنني مساعدتك؟" },
-  { command: "/about", description: "نبذة عن معين", response: "معين العباسي - مطور حلول الذكاء الاصطناعي ومهندس البرومبتات. طالب في السنة الرابعة IT بجامعة العلوم والتكنولوجيا." },
-  { command: "/skills", description: "المهارات التقنية", response: "أتقن: Python, JavaScript, TypeScript, React, Next.js, Django, AI/ML, والمزيد..." },
-  { command: "/projects", description: "المشاريع", response: "لدي 6+ مشاريع رئيسية و 31 مستودع على GitHub. اكتشفها في قسم المشاريع!" },
-  { command: "/contact", description: "معلومات التواصل", response: "📧 Moain.learn@gmail.com\n🔗 GitHub: MoainAlabbasi\n💼 LinkedIn: moainalabbasi" },
-  { command: "/cv", description: "تحميل السيرة الذاتية", response: "يمكنك تحميل سيرتي الذاتية من قسم التواصل بالعربية أو الإنجليزية." },
-  { command: "/help", description: "قائمة الأوامر", response: "الأوامر المتاحة:\n/start - بدء المحادثة\n/about - نبذة عني\n/skills - المهارات\n/projects - المشاريع\n/contact - التواصل\n/cv - السيرة الذاتية" },
+  { command: "/start", description: "بدء المحادثة", response: "مرحباً! 👋 أنا مساعد معين الافتراضي. كيف يمكنني مساعدتك اليوم؟" },
+  { command: "/about", description: "نبذة عن معين", response: "معين العباسي - مطور Full-Stack ومهندس البرومبتات 🚀\n\n• طالب سنة رابعة IT بجامعة العلوم والتكنولوجيا\n• خبرة 3+ سنوات في التطوير\n• متخصص في AI و Prompt Engineering\n• شغوف بحل المشكلات وبناء المنتجات" },
+  { command: "/skills", description: "المهارات التقنية", response: "💻 المهارات التقنية:\n\n• اللغات: Python, JavaScript, TypeScript, C#, Java, Kotlin, Go\n• Frontend: React, Next.js, Flutter\n• Backend: Django, FastAPI, .NET\n• AI: Prompt Engineering, Gemini, GPT-4\n• قواعد البيانات: PostgreSQL, MySQL, Oracle\n• السحابة: Docker, Azure, GCP, Vercel" },
+  { command: "/projects", description: "المشاريع", response: "🚀 المشاريع الرئيسية:\n\n1. SACM-System - نظام أكاديمي ذكي\n2. نظام إدارة محلات الإلكترونيات\n3. تطبيق الدخل والمصروفات (Android)\n4. مستخرج الأسئلة بـ AI\n5. بوت أرشفة تليجرام\n6. مشروع Blockchain\n\n📊 إجمالي: 31 مستودع على GitHub" },
+  { command: "/contact", description: "معلومات التواصل", response: "📬 معلومات التواصل:\n\n📧 البريد: Moain.learn@gmail.com\n🔗 GitHub: github.com/MoainAlabbasi\n💼 LinkedIn: linkedin.com/in/moainalabbasi\n📍 الموقع: اليمن" },
+  { command: "/cv", description: "تحميل السيرة الذاتية", response: "📄 السيرة الذاتية متاحة للتحميل:\n\n• النسخة العربية\n• النسخة الإنجليزية\n\nيمكنك تحميلها من صفحة معلومات التواصل!" },
+  { command: "/help", description: "قائمة الأوامر", response: "📋 الأوامر المتاحة:\n\n/start - بدء المحادثة\n/about - نبذة عني\n/skills - المهارات التقنية\n/projects - المشاريع\n/contact - معلومات التواصل\n/cv - السيرة الذاتية\n/help - قائمة الأوامر" },
 ];
