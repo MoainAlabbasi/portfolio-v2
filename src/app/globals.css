@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Tajawal', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Colors */
+  --color-primary: oklch(0.75 0.18 200);
+  --color-primary-dark: oklch(0.65 0.16 200);
+  --color-secondary: oklch(0.55 0.25 280);
+  --color-accent: oklch(0.7 0.2 160);
+  --color-warning: oklch(0.75 0.18 80);
+  --color-danger: oklch(0.65 0.22 25);
+  
+  --color-bg-dark: oklch(0.12 0.02 250);
+  --color-bg-darker: oklch(0.08 0.02 250);
+  --color-bg-card: oklch(0.18 0.02 250);
+  --color-bg-sidebar: oklch(0.14 0.02 250);
+  
+  --color-text-primary: oklch(0.95 0.01 250);
+  --color-text-secondary: oklch(0.7 0.02 250);
+  --color-text-muted: oklch(0.55 0.02 250);
+  
+  --color-border: oklch(0.25 0.02 250);
+  --color-border-light: oklch(0.35 0.02 250);
+  
+  --color-glow: oklch(0.75 0.18 200 / 0.3);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    direction: rtl;
+  }
+  
+  body {
+    @apply bg-bg-dark text-text-primary antialiased;
+    font-family: var(--font-sans);
+  }
+  
+  ::selection {
+    @apply bg-primary/30 text-text-primary;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-light rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  .glow {
+    box-shadow: 0 0 20px var(--color-glow);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px var(--color-glow);
+  }
+  
+  .glass {
+    @apply bg-bg-card/80 backdrop-blur-xl border border-border;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:border-primary hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-bg-dark font-semibold px-6 py-3 rounded-xl;
+    @apply transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-xl;
+    @apply transition-all duration-300 hover:bg-primary hover:text-bg-dark;
+  }
+  
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px var(--color-glow); }
+    50% { box-shadow: 0 0 40px var(--color-glow); }
+  }
+  
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .skill-tag {
+    @apply bg-bg-darker text-text-secondary px-4 py-2 rounded-lg border border-border;
+    @apply transition-all duration-300 hover:border-primary hover:text-primary hover:bg-primary/10;
+    font-family: var(--font-mono);
+  }
+  
+  .nav-link {
+    @apply flex items-center gap-3 px-5 py-3 rounded-xl text-text-secondary;
+    @apply transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .nav-link::before {
+    content: '';
+    @apply absolute right-0 top-0 w-1 h-full bg-primary;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    @apply bg-primary/10 text-primary;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    transform: scaleY(1);
+  }
+  
+  .project-card {
+    @apply bg-bg-card rounded-2xl border border-border overflow-hidden;
+    @apply transition-all duration-500 hover:border-primary hover:-translate-y-2;
+  }
+  
+  .form-input {
+    @apply w-full px-5 py-4 bg-bg-darker border border-border rounded-xl;
+    @apply text-text-primary placeholder:text-text-muted;
+    @apply transition-all duration-300 focus:outline-none focus:border-primary;
+  }
+  
+  .bot-message {
+    @apply bg-bg-card border border-border rounded-2xl p-4;
+  }
+  
+  .user-message {
+    @apply bg-primary/20 border border-primary/30 rounded-2xl p-4;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: animateIn 0.5s ease forwards;
+  }
+  
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
