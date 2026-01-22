@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { 
   Mail, 
   MapPin, 
@@ -95,10 +96,13 @@ export default function InfoPage() {
             <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
               <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-secondary animate-pulse opacity-50" />
-                <img
+                <Image
                   src="/images/profile.jpg"
                   alt={siteConfig.nameAr}
+                  width={112}
+                  height={112}
                   className="w-full h-full rounded-full object-cover border-2 border-bg-dark relative z-10"
+                  priority
                 />
               </div>
               <div className="text-center sm:text-right">

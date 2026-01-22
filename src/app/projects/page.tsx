@@ -185,7 +185,7 @@ export default function ProjectsPage() {
                           className="flex items-start gap-3"
                         >
                           <span className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span className="text-primary text-xs">✓</span>
+                            <span className="text-primary text-xs font-bold">+</span>
                           </span>
                           <span className="text-text-secondary text-sm sm:text-base">{feature}</span>
                         </motion.li>

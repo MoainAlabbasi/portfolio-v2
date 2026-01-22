@@ -1,13 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_TO) {
+  console.error("خطأ: متغيرات البريد الإلكتروني غير محددة بشكل صحيح");
+}
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.EMAIL_USER || "",
+    pass: process.env.EMAIL_PASS || "",
   },
-});
+  pool: {
+    maxConnections: 1,
+    maxMessages: 5,
+    rateDelta: 5000,
+    rateLimit: 5,
+  },
+} as any);
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,11 +32,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Email to site owner
+    // Email to owner
     const ownerMailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
-      subject: `📩 رسالة جديدة من ${name} - Portfolio`,
+      subject: `رسالة جديدة من ${name} - معين العباسي`,
       html: `
         <!DOCTYPE html>
         <html dir="rtl" lang="ar">
@@ -95,7 +107,7 @@ export async function POST(request: NextRequest) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>📩 رسالة جديدة من Portfolio</h1>
+              <h1>رسالة جديدة من Portfolio</h1>
             </div>
             <div class="content">
               <div class="field">
@@ -124,7 +136,7 @@ export async function POST(request: NextRequest) {
     const senderMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: `✨ شكراً لتواصلك - معين العباسي`,
+      subject: `شكراً لتواصلك - معين العباسي`,
       html: `
         <!DOCTYPE html>
         <html dir="rtl" lang="ar">
@@ -218,16 +230,16 @@ export async function POST(request: NextRequest) {
         <body>
           <div class="container">
             <div class="header">
-              <h1>✨ شكراً لتواصلك!</h1>
+              <h1>شكراً لتواصلك!</h1>
               <p>رسالتك وصلت بنجاح</p>
             </div>
             <div class="content">
-              <div class="greeting">مرحباً ${name}! 👋</div>
+              <div class="greeting">مرحباً ${name}!</div>
               <p>
                 شكراً جزيلاً لتواصلك معي عبر موقعي الشخصي. لقد استلمت رسالتك وسأقوم بالرد عليك في أقرب وقت ممكن.
               </p>
               <div class="highlight-box">
-                <strong>📝 ملخص رسالتك:</strong>
+                <strong>ملخص رسالتك:</strong>
                 <p style="margin: 10px 0 0 0; color: #ccc;">${message.substring(0, 200)}${message.length > 200 ? '...' : ''}</p>
               </div>
               <p>
@@ -252,17 +264,38 @@ export async function POST(request: NextRequest) {
     };
 
     // Send both emails
-    await transporter.sendMail(ownerMailOptions);
-    await transporter.sendMail(senderMailOptions);
+    const emailsSent = { owner: false, sender: false };
+
+    try {
+      await transporter.sendMail(ownerMailOptions);
+      emailsSent.owner = true;
+      console.log("تم إرسال البريد للمالك بنجاح");
+    } catch (ownerError) {
+      console.error("خطأ في إرسال بريد المالك:", ownerError);
+      throw new Error(`فشل إرسال البريد للمالك: ${ownerError instanceof Error ? ownerError.message : 'خطأ غير معروف'}`);
+    }
+
+    try {
+      await transporter.sendMail(senderMailOptions);
+      emailsSent.sender = true;
+      console.log("تم إرسال بريد الرد التلقائي بنجاح");
+    } catch (senderError) {
+      console.error("خطأ في إرسال بريد الرد:", senderError);
+      // لا نرمي خطأ هنا لأن البريد الرئيسي تم إرساله بنجاح
+    }
 
     return NextResponse.json(
-      { success: true, message: "تم إرسال رسالتك بنجاح!" },
+      { success: true, message: "تم استقبال رسالتك بنجاح! سيتم الرد عليك قريباً." },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Email error:", error);
+    const errorMessage = error instanceof Error ? error.message : "خطأ غير معروف";
+    console.error("خطأ في معالجة الطلب:", errorMessage);
     return NextResponse.json(
-      { error: "حدث خطأ أثناء إرسال الرسالة" },
+      { 
+        error: "حدث خطأ أثناء معالجة رسالتك. يرجى المحاولة لاحقاً.",
+        details: process.env.NODE_ENV === "development" ? errorMessage : undefined
+      },
       { status: 500 }
     );
   }

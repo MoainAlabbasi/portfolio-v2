@@ -17,7 +17,7 @@ export default function ChatBot() {
     {
       id: 1,
       type: "bot",
-      text: `مرحباً! 👋 أنا مساعد ${siteConfig.nameAr} الافتراضي.\n\nاكتب /help لرؤية الأوامر المتاحة، أو اسألني أي سؤال!`,
+      text: `مرحباً! أنا مساعد ${siteConfig.nameAr} الافتراضي.\n\nاكتب /help لرؤية الأوامر المتاحة، أو اسألني أي سؤال!`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -52,7 +52,7 @@ export default function ChatBot() {
       if (command) {
         response = command.response;
       } else if (lowerInput.includes("مرحبا") || lowerInput.includes("هلا") || lowerInput.includes("hi") || lowerInput.includes("hello")) {
-        response = `أهلاً وسهلاً! 😊 كيف يمكنني مساعدتك اليوم؟`;
+        response = `أهلاً وسهلاً! كيف يمكنني مساعدتك؟`;
       } else if (lowerInput.includes("اسم") || lowerInput.includes("من انت") || lowerInput.includes("who")) {
         response = `أنا مساعد ${siteConfig.nameAr} الافتراضي. ${siteConfig.nameAr} هو ${siteConfig.titleAr}.`;
       } else if (lowerInput.includes("مهارات") || lowerInput.includes("skill")) {
@@ -60,13 +60,13 @@ export default function ChatBot() {
       } else if (lowerInput.includes("مشاريع") || lowerInput.includes("project")) {
         response = "لدى معين 6+ مشاريع رئيسية و 31 مستودع على GitHub. أبرزها:\n• SACM-System - نظام أكاديمي ذكي\n• نظام إدارة محلات الإلكترونيات\n• تطبيق الدخل والمصروفات\nزر صفحة المشاريع لمعرفة المزيد!";
       } else if (lowerInput.includes("تواصل") || lowerInput.includes("contact") || lowerInput.includes("ايميل") || lowerInput.includes("email")) {
-        response = `للتواصل مع معين:\n📧 ${siteConfig.email}\n🔗 GitHub: MoainAlabbasi\n💼 LinkedIn: moainalabbasi\n\nأو استخدم نموذج التواصل في الموقع!`;
+        response = `للتواصل مع معين:\nالبريد: ${siteConfig.email}\nGitHub: MoainAlabbasi\nLinkedIn: moainalabbasi\n\nأو استخدم نموذج التواصل في الموقع!`;
       } else if (lowerInput.includes("cv") || lowerInput.includes("سيرة")) {
         response = "يمكنك تحميل السيرة الذاتية من صفحة التواصل:\n• النسخة الإنجليزية\n• النسخة العربية";
       } else if (lowerInput.includes("شكر") || lowerInput.includes("thank")) {
-        response = "عفواً! سعيد بمساعدتك 😊";
+        response = "عفواً! سعيد بمساعدتك";
       } else {
-        response = `شكراً لرسالتك! 💬\n\nللحصول على معلومات محددة، جرب الأوامر:\n/about - نبذة عني\n/skills - المهارات\n/projects - المشاريع\n/contact - التواصل\n/help - كل الأوامر`;
+        response = `شكراً لرسالتك!\n\nللحصول على معلومات محددة، جرب الأوامر:\n/about - نبذة عني\n/skills - المهارات\n/projects - المشاريع\n/contact - التواصل\n/help - كل الأوامر`;
       }
 
       const botMessage: Message = {
